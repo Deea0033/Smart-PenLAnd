@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #dbe9f4;
+    padding: 40px 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: bold;
+    color: #4a6e91;
+}
+
+.image-section {
+    margin-top: 40px;
+}
+
+.image-section img {
+    width: 250px;
+    height: auto;
+}
+
+.coming-soon {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #777;
+}
+
+.notify-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #4a6e91;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.notify-btn:hover {
+    background-color: #3b5874;
+}
+
+.about {
+    margin: 60px auto;
+    max-width: 700px;
+    padding: 0 20px;
+}
+
+.about h2 {
+    color: #4a6e91;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.about p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.reviews {
+    margin-top: 50px;
+    background-color: #eeeeee;
+    padding: 40px 20px;
+}
+
+.reviews h2 {
+    color: #4a6e91;
+}
+
+.review {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-style: italic;
+}
