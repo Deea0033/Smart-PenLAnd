@@ -4,15 +4,6 @@
     <meta charset="UTF-8">
     <title>Smart-PenLAnd - În curând!</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Stil pentru mesajul de mulțumire */
-        #thankYouMessage {
-            display: none;
-            margin-top: 10px;
-            color: green;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -23,7 +14,6 @@
         <img src="depen.png" alt="Smart-PenLAnd - dispozitiv inteligent">
         <p class="coming-soon">Disponibil în curând. Pregătește-te pentru o revoluție în scris!</p>
         <button class="notify-btn" onclick="openEmailPrompt()">🔔 Notifică-mă când apare</button>
-        <p id="thankYouMessage">Mulțumim! Te vom anunța când lansăm Smart-PenLAnd.</p>
     </section>
 
     <section class="about">
@@ -48,12 +38,15 @@
         </div>
     </section>
 
+    <footer>
+        <p>Mulțumim că ești interesat(ă) de Smart-PenLAnd! Revenim în curând cu noutăți. 🚀</p>
+    </footer>
+
     <script>
         function openEmailPrompt() {
             window.open("https://forms.gle/Dv7rtrqWs7J8qGCc6", "_blank");
-            // Arată mesajul de mulțumire pe site, în pagina curentă
-            document.getElementById("thankYouMessage").style.display = "block";
         }
     </script>
 </body>
 </html>
+
