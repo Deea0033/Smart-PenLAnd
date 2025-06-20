@@ -2,8 +2,17 @@
 <html lang="ro">
 <head>
     <meta charset="UTF-8">
-    <title>Smart-PenLAnd- În curând!</title>
+    <title>Smart-PenLAnd - În curând!</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stil pentru mesajul de mulțumire */
+        #thankYouMessage {
+            display: none;
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -11,9 +20,10 @@
     </header>
 
     <section class="image-section">
-        <img src="depen.png" alt="DEPen - dispozitiv inteligent">
+        <img src="depen.png" alt="Smart-PenLAnd - dispozitiv inteligent">
         <p class="coming-soon">Disponibil în curând. Pregătește-te pentru o revoluție în scris!</p>
-        <button class="notify-btn">🔔 Notifică-mă când apare</button>
+        <button class="notify-btn" onclick="openEmailPrompt()">🔔 Notifică-mă când apare</button>
+        <p id="thankYouMessage">Mulțumim! Te vom anunța când lansăm Smart-PenLAnd.</p>
     </section>
 
     <section class="about">
@@ -31,11 +41,19 @@
             <p>⭐⭐⭐⭐⭐ „Este viitorul! Îmi face viața mult mai ușoară când iau notițe.” – Andreea M.</p>
         </div>
         <div class="review">
-            <p>⭐⭐⭐⭐⭐ „Elegant, inteligent și ușor de folosit. DEPen este genial!” – Vlad C.</p>
+            <p>⭐⭐⭐⭐⭐ „Elegant, inteligent și ușor de folosit. Smart-PenLAnd este genial!” – Vlad C.</p>
         </div>
         <div class="review">
             <p>⭐⭐⭐⭐⭐ „A fost dragoste la prima utilizare. Abia aștept să apară oficial!” – Ioana P.</p>
         </div>
     </section>
+
+    <script>
+        function openEmailPrompt() {
+            window.open("https://forms.gle/Dv7rtrqWs7J8qGCc6", "_blank");
+            // Arată mesajul de mulțumire pe site, în pagina curentă
+            document.getElementById("thankYouMessage").style.display = "block";
+        }
+    </script>
 </body>
 </html>
