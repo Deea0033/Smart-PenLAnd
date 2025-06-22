@@ -5,7 +5,6 @@
   <title>Smart-PenLAnd - În curând!</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Stiluri de bază pentru meniu hamburger */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -51,9 +50,7 @@
     }
   </style>
 </head>
-
 <body>
-  <!-- Bara de navigare -->
   <nav class="navbar">
     <h1>Smart-PenLAnd</h1>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
@@ -62,14 +59,12 @@
     </div>
   </nav>
 
-  <!-- Secțiunea principală -->
   <section class="image-section">
     <img src="depen.png" alt="Smart-PenLAnd - dispozitiv inteligent">
     <p class="coming-soon">Disponibil în curând. Pregătește-te pentru o revoluție în scris!</p>
     <button class="notify-btn" onclick="openEmailPrompt()">🔔 Notifică-mă când apare</button>
   </section>
 
-  <!-- Descriere produs -->
   <section class="about">
     <h2>Ce este Smart-PenLAnd?</h2>
     <p>
@@ -79,7 +74,6 @@
     </p>
   </section>
 
-  <!-- Recenzii -->
   <section class="reviews">
     <h2>Ce spun utilizatorii noștri:</h2>
     <div class="review">
@@ -103,10 +97,8 @@
       const email = prompt("Introdu adresa ta de email pentru a fi notificat când lansăm:");
       if (email) {
         alert("Mulțumim! Te vom anunța pe " + email + " când lansăm Smart-PenLAnd.");
-        // Aici poți adăuga funcția de trimitere către formular
       }
     }
   </script>
 </body>
 </html>
-
