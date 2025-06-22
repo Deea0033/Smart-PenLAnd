@@ -5,13 +5,22 @@
   <title>Smart-PenLAnd - În curând!</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .navbar {
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem;
       background-color: #1a1a1a;
       color: white;
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
     }
 
     .menu-icon {
@@ -29,7 +38,6 @@
       right: 10px;
       border-radius: 8px;
       padding: 1rem;
-      z-index: 999;
     }
 
     .menu-links a {
@@ -48,11 +56,16 @@
       font-size: 1rem;
       cursor: pointer;
     }
+
+    .image-section {
+      padding-top: 100px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <h1>Smart-PenLAnd</h1>
+  <nav>
+    <div class="logo">Smart-PenLAnd</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <div class="menu-links" id="menuLinks">
       <a href="informatii.html">Mai multe informații</a>
