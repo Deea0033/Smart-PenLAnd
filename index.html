@@ -2,25 +2,28 @@
 <html lang="ro">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart-PenLAnd - În curând!</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    nav {
+    /* BARA DE NAVIGARE */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem;
       background-color: #1a1a1a;
       color: white;
-      padding: 1rem 2rem;
       position: fixed;
-      top: 0;
       width: 100%;
+      top: 0;
       z-index: 1000;
-    }
-
-    nav .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
     }
 
     .menu-icon {
@@ -50,22 +53,69 @@
       display: flex;
     }
 
-    .notify-btn {
-      margin-top: 1rem;
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
+    /* SECTIUNI */
+    .image-section, .about, .reviews {
+      padding: 6rem 1rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
     }
 
-    .image-section {
-      padding-top: 100px;
-      text-align: center;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .notify-btn {
+      margin-top: 1rem;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      background-color: #1a1a1a;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .notify-btn:hover {
+      background-color: #333;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    .review {
+      margin: 1rem 0;
+      font-style: italic;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* RESPONSIVE */
+    @media (min-width: 768px) {
+      .menu-links {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+        gap: 1rem;
+        background: none;
+        padding: 0;
+      }
+
+      .menu-icon {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">Smart-PenLAnd</div>
+
+  <nav class="navbar">
+    <h1>Smart-PenLAnd</h1>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <div class="menu-links" id="menuLinks">
       <a href="informatii.html">Mai multe informații</a>
