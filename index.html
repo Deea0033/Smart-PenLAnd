@@ -1,78 +1,75 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Smart-PenLAnd - În curând!</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <style>
-    .hidden { display: none; }
-    .success-message {
-      text-align: center;
-      color: green;
-      font-weight: bold;
-      animation: fadeIn 1s ease-in-out;
-      margin-top: 20px;
+    /* Stiluri de bază pentru meniu hamburger */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: #1a1a1a;
+      color: white;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .menu-icon {
+      font-size: 2rem;
+      cursor: pointer;
+      display: block;
     }
 
-    .form-container {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    input[type="email"] {
-      padding: 10px;
-      width: 250px;
-      border: 1px solid #ccc;
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      background-color: #1a1a1a;
+      position: absolute;
+      top: 60px;
+      right: 10px;
       border-radius: 8px;
-      font-size: 1rem;
+      padding: 1rem;
+      z-index: 999;
     }
 
-    button[type="submit"] {
-      margin-top: 10px;
+    .menu-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0.5rem 0;
+    }
+
+    .menu-links.show {
+      display: flex;
+    }
+
+    .notify-btn {
+      margin-top: 1rem;
       padding: 10px 20px;
       font-size: 1rem;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 8px;
       cursor: pointer;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #45a049;
     }
   </style>
 </head>
+
 <body>
-  <header>
+  <!-- Bara de navigare -->
+  <nav class="navbar">
     <h1>Smart-PenLAnd</h1>
-  </header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu-links" id="menuLinks">
+      <a href="informatii.html">Mai multe informații</a>
+    </div>
+  </nav>
 
+  <!-- Secțiunea principală -->
   <section class="image-section">
-    <img src="depen.png" alt="Smart-PenLAnd - dispozitiv inteligent" />
+    <img src="depen.png" alt="Smart-PenLAnd - dispozitiv inteligent">
     <p class="coming-soon">Disponibil în curând. Pregătește-te pentru o revoluție în scris!</p>
-    <button class="notify-btn" onclick="showForm()">🔔 Notifică-mă când apare</button>
+    <button class="notify-btn" onclick="openEmailPrompt()">🔔 Notifică-mă când apare</button>
   </section>
 
-  <section class="form-container hidden" id="form-section">
-    <form id="notify-form" action="https://formsubmit.co/d33aaa03@gmail.com" method="POST">
-      <!-- Ascunde redirectul standard -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_autoresponse" value="Îți mulțumim că te-ai înscris! Vei fi notificat la lansare.">
-
-      <input type="email" name="email" placeholder="Introdu adresa ta de email" required />
-      <br />
-      <button type="submit">Trimite</button>
-    </form>
-    <div id="thank-you" class="success-message hidden">Mulțumim! Te vom anunța când lansăm Smart-PenLAnd. 📬</div>
-  </section>
-
+  <!-- Descriere produs -->
   <section class="about">
     <h2>Ce este Smart-PenLAnd?</h2>
     <p>
@@ -82,6 +79,7 @@
     </p>
   </section>
 
+  <!-- Recenzii -->
   <section class="reviews">
     <h2>Ce spun utilizatorii noștri:</h2>
     <div class="review">
@@ -96,33 +94,19 @@
   </section>
 
   <script>
-    function showForm() {
-      document.getElementById("form-section").classList.remove("hidden");
+    function toggleMenu() {
+      const menu = document.getElementById("menuLinks");
+      menu.classList.toggle("show");
     }
 
-    document.getElementById("notify-form").addEventListener("submit", function (e) {
-      e.preventDefault(); // oprim trimiterea clasică
-      const form = e.target;
-
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: {
-          Accept: "application/json",
-        },
-      })
-        .then(response => {
-          if (response.ok) {
-            form.reset();
-            document.getElementById("thank-you").classList.remove("hidden");
-          } else {
-            alert("A apărut o problemă. Încearcă din nou mai târziu.");
-          }
-        })
-        .catch(error => {
-          alert("Eroare la trimitere. Verifică conexiunea sau încearcă mai târziu.");
-        });
-    });
+    function openEmailPrompt() {
+      const email = prompt("Introdu adresa ta de email pentru a fi notificat când lansăm:");
+      if (email) {
+        alert("Mulțumim! Te vom anunța pe " + email + " când lansăm Smart-PenLAnd.");
+        // Aici poți adăuga funcția de trimitere către formular
+      }
+    }
   </script>
 </body>
 </html>
+
