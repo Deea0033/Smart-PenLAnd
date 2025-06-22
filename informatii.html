@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Componente Smart-PenLAnd</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fff;
+    }
+
+    nav {
+      background-color: #222;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      background: #333;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      padding: 10px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 0;
+    }
+
+    .menu.show {
+      display: flex;
+    }
+
+    .section {
+      max-width: 800px;
+      margin: 100px auto;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section img {
+      width: 300px;
+      margin-bottom: 20px;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    .section p {
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Smart-PenLAnd</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+      <a href="index.html">Acasă</a>
+      <a href="informatii.html">Mai multe informații</a>
+    </div>
+  </nav>
+
+  <div class="section" id="screen">
+    <img src="pix.png" alt="Ecranul Smart-PenLAnd">
+    <h2>Ecran inteligent</h2>
+    <p>Dimensiune compactă, cu afișaj clar. Ideal pentru răspunsuri rapide AI direct din pix.</p>
+  </div>
+
+  <div class="section" id="carcasa">
+    <img src="pix.png" alt="Carcasă Smart-PenLAnd">
+    <h2>Carcasă rezistentă</h2>
+    <p>Fabricată din material ușor, dar durabil. Design elegant, stilat și ergonomic.</p>
+  </div>
+
+  <div class="section" id="sensor">
+    <img src="pix.png" alt="Senzor optic Smart-PenLAnd">
+    <h2>Senzor optic integrat</h2>
+    <p>Scanează textul rapid și precis. Activează răspunsurile AI cu un singur click.</p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    // Apare treptat la scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    });
+
+    document.querySelectorAll(".section").forEach(sec => {
+      observer.observe(sec);
+    });
+  </script>
+</body>
+</html>
